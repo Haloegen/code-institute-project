@@ -1,0 +1,33 @@
+.bold {
+    font-weight: bold;
+}
+
+/* project list (no projects) */
+
+.noproject-wrapper {
+    margin-top: 250px;
+    padding: 80px 0px;
+    border: 6px solid;
+    border-style: dashed;
+}
+
+.noproject-wrapper h3 {
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+/* project detail statistics  */
+.section-stats .card-panel {
+    margin: 8px;
+}
+
+.section-stats h1 {
+    font-size: 4vw;
+    margin: 15px 0px;
+}
+
+@media(max-width: 992px){
+    .section-stats h1 {
+        font-size: calc(16px + 6vw);
+    }
+}
