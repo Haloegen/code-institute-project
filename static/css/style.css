@@ -20,6 +20,16 @@
     margin-bottom: 50px;
 }
 
+/* project add view css code */
+form ul li.category {
+    display: inline-block;
+    background-color: white;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+
+
 /* project detail statistics  */
 .section-stats .card-panel {
     margin: 8px;
