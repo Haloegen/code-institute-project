@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <form action="">
+        {% csrf_token %}
+        {{ form }}
+        <label for="catergoryInput">Expense Categories (hit enter after every category)</label>
+        <input type="text" id="categoryInput" name="categoryInput">
+        <input type="hidden" name="categoriesString">
+    
+    <ul id="categoriesContainer">
+        <li class="category">
+            <span class="name">Development</span>
+            <span onclick="removeCategory(this)" class="btnRemove bold">X</span>
+        </li>
+        <li class="category">
+            <span class="name">Development</span>
+            <span onclick="removeCategory(this)" class="btnRemove bold">X</span>
+        </li>
+        <li class="category">
+            <span class="name">Development</span>
+            <span onclick="removeCategory(this)" class="btnRemove bold">X</span>
+        </li>
+
+    </ul>
+    </form>
+</div>
+
+{% endblock %}
