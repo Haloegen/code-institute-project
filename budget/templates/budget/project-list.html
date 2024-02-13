@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+{% if user.is_authenticated %}
 <div class="container">
     <div class="noproject-wrapper center">
         <h3 class="grey-text">Sorry, you dont have any projects, yet.</h3>
@@ -10,4 +12,19 @@
         </a>
     </div>
 </div>
+
+{% else %}
+
+<div class="container">
+    <div class="noproject-wrapper center">
+        <h3 class="grey-text">Sorry, you dont seem to be signed in.
+            Please sign in to see this content
+        </h3>
+        <a href="{% url 'account_login' %}" class="btn-large grey">
+            <i class="material-icons white-text left">add_circle</i>
+            <span class="bold">Sign-in</span>
+        </a>
+    </div>
+</div>
+        {% endif %}
 {% endblock %}

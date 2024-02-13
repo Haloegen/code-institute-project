@@ -14,6 +14,20 @@ class Project(models.Model):
         super(Project, self).save(*args, **kwargs)
 
 
+    def budget_remaining(self):
+        expense_list = Expense.objects.filter(project=self)
+        total_expense = 0
+        for expense in expense_list:
+            total_expense += expense.cost
+        
+        return self.budget - total_expense
+
+
+    def total_cost(self):
+        expense_list = Expense.objects.filter(project=self)
+        return len(expense_list)
+
+
 class Category(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
