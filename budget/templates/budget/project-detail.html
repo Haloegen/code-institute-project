@@ -49,6 +49,7 @@
                     </div>
 
                     <a href=""><i class="material-icons red-text right">close</i></a>
+                
                 </div>
             </div></li>
             {% endfor %}
@@ -61,7 +62,7 @@
     <div class="modal-content">
         <h4>Add Expense's</h4>
 
-        <form  method="POST">
+        <form method="POST">
             {% csrf_token %}
             <label for="title">Name</label>
             <input id="title" name="title" >
@@ -69,7 +70,7 @@
             <label for="cost">Cost</label>
             <input id="cost" name="cost" >
             
-            <select name="category" >
+            <select name="category">
                 {% for category in category_list %}
                 <option> {{ category.name }}</option>
                 {% endfor %}
@@ -86,6 +87,20 @@
 
     var elem = document.querySelector('select')
     var instance = M.FormSelect.init(elem)
+
+    function expenseDelete(id){
+
+        fetch('', {
+            method: 'DELETE',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({
+                'id':id
+            }),
+            credentials: 'same-origin',
+        })
+    }
 
 
 </script>
