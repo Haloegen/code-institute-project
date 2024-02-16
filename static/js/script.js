@@ -1,3 +1,5 @@
+
+
 (function(){
 
     document.querySelector('#categoryInput').addEventListener('keydown', function(e){
@@ -48,3 +50,10 @@ function removeCategory(e){
     e.parentElement.remove()
     updateCategoriesString()
 }
+
+function projectDelete(e) {
+        projectId = e.target.getAttribute("id");
+        Project.remove(projectId=projectId)
+}
+
+
