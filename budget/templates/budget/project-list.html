@@ -8,7 +8,6 @@
 <hr>
 {% for project in project_list %}
     {% if project.author == user %}
-        <div class="col s12 m6">
 <div class="container">
     <div class="row">
         <div class="col s12 m6">
@@ -17,6 +16,19 @@
                 <a href="{% url 'detail' project.slug %}" class="btn">View</a>
                 <!-- Trigger Button for Modal -->
                 <a class="btn red modal-trigger" href="#delete-modal-{{ project.slug }}">Delete</a>
+            </div>
+        </div>
+        <div id="delete-modal-{{ project.slug }}" class="modal">
+            <div class="modal-content">
+                <h4>Confirm Deletion</h4>
+                <p>Are you sure you want to delete this project?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                <form action="{% url 'delete_project' project_slug=project.slug %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn red">Delete</button>
+                </form>
             </div>
         </div>
     {% else %}
@@ -61,6 +73,9 @@
     </div>
 </div>
         {% endif %}
+        {% if project.slug %}
+
+{% endif %}
 <hr>
 
 

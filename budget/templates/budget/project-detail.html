@@ -65,21 +65,29 @@
 
 <div id="modalExpenses" class="modal">
     <div class="modal-content">
-        <h4>Add Expense's</h4>
-
-        <form method="POST">
+        <h4>Add Expense</h4>
+        
+        <form method="POST" id="expenseForm">
             {% csrf_token %}
-            <label for="title">Name</label>
-            <input id="title" name="title" >
+            <div class="input-field">
+                <label for="title">Name</label>
+                <input id="title" name="title" type="text">
+            </div>
 
-            <label for="cost">Cost</label>
-            <input id="cost" name="cost" >
+            <div class="input-field">
+                <label for="cost">Cost</label>
+                <input id="cost" name="cost" type="text">
+            </div>
             
-            <select name="category">
-                {% for category in category_list %}
-                <option> {{ category.name }}</option>
-                {% endfor %}
-            </select>
+            <div class="input-field">
+                <select name="category" id="category">
+                    <option value="" disabled selected>Choose your option</option>
+                    {% for category in category_list %}
+                        <option value="{{ category.id }}"> {{ category.name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="category">Category</label>
+            </div>
 
             <button type="submit" class="btn">Add</button>
         </form>

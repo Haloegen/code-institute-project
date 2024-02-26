@@ -12,6 +12,7 @@ import json
 from .forms import formExpenses
 # Create your views here.
 
+@login_required
 def project_list(request):
     # Retrieves all projects from the database and renders them in the 'project-list.html' template
     project_list = Project.objects.all()
@@ -61,7 +62,6 @@ class ProjectCreateView(CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        return super(ProjectCreateView, self).form_valid(form)
         # Overrides form_valid method to create project and associated categories
         self.object = form.save(commit=False)
         self.object.save()
@@ -71,7 +71,7 @@ class ProjectCreateView(CreateView):
                 project=Project.objects.get(id=self.object.id),
                 name=category,
             ).save()
-            messages.add_message(request, messages.SUCCESS, 'Project Created')
+            messages.add_message(self.request, messages.SUCCESS, 'Project Created')
         return HttpResponseRedirect(self.get_success_url())
     
     def get_success_url(self):
