@@ -11,7 +11,7 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">Add Project</span>
-              <form action="" method="POST">
+              <form id="projectForm" method="POST">
                 {{ form | crispy }}
                 {% csrf_token %}
                 <label for="categoryInput">Expense Categories (hit enter after every category)</label>
@@ -31,6 +31,6 @@
 </div>
 
 
-<script src="{% static 'js/script.js' %}"></script>
 
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}

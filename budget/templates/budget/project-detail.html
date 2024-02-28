@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="col l3">
-                        <span class="title">{{ expense.amount }}</span>
+                        <span class="title">{{ expense.cost }}</span>
                     </div>
 
                     <div class="col l1">
@@ -66,17 +66,23 @@
 <div id="modalExpenses" class="modal">
     <div class="modal-content">
         <h4>Add Expense</h4>
-        
-        <form method="POST" id="expenseForm">
+        <form id="expenseForm" method="post">
             {% csrf_token %}
+            
             <div class="input-field">
                 <label for="title">Name</label>
                 <input id="title" name="title" type="text">
+                <!-- Display errors for the title field -->
+                    <div class="error-message">
+                    </div>
             </div>
-
+        
             <div class="input-field">
                 <label for="cost">Cost</label>
                 <input id="cost" name="cost" type="text">
+                <!-- Display errors for the cost field -->
+                    <div class="error-message">
+                    </div>
             </div>
             
             <div class="input-field">
@@ -87,8 +93,11 @@
                     {% endfor %}
                 </select>
                 <label for="category">Category</label>
+                <!-- Display errors for the category field -->
+                    <div class="error-message">
+                    </div>
             </div>
-
+        
             <button type="submit" class="btn">Add</button>
         </form>
     </div>
@@ -101,6 +110,55 @@
     var elem = document.querySelector('select')
     var instance = M.FormSelect.init(elem)
 
+    $('#expenseForm').validate({
+    rules: {
+        title: {
+            required: true,
+            minlength: 2
+        },
+        cost: {
+            required: true,
+            number: true,
+            min: 0.01
+        },
+        category: {
+            required: true
+        }
+    },
+    messages: {
+        title: {
+            required: "This field is required",
+            minlength: "Name must be at least 2 characters long"
+        },
+        cost: {
+            required: "This field is required",
+            number: "Please enter a valid number",
+            min: "Cost must be greater than 0"
+        },
+        category: {
+            required: "Please select a category"
+        }
+    },
+    errorPlacement: function(error, element) {
+        // Find the next sibling .error-message element and append the error there
+        element.next('.error-message').append(error);
+    },
+    submitHandler: function(form) {
+        $.ajax({
+            url: window.location.href, 
+            type: 'POST',
+            data: $(form).serialize(),
+            success: function(response) {
+                $('#modalExpenses').modal('close'); 
+                window.location.reload(true);
+            },
+            error: function(xhr, status, error) {
+                alert("Error: " + error);
+            }
+        });
+    }
+});
+       
     function expenseDelete(e){
 
         let id = e.dataset.id
