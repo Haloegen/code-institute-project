@@ -1,10 +1,9 @@
-# Love Running
+# ECON BUDGET MONEY MANAGER
 
 The project called Econ-budget Money Manager is for helping people keep track of personal finances, each project is only accessible to the one who created it. 
 The project uses a django framework, and materializecss to help make the project responsive and able to be used a multitude of devices, this project is mainly designed to be used on phones and tablet devices. This app is mainly aimed at people trying to keep track of the expenses
 
 
-![Responsice Mockup](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
 
 ## Features 
 
@@ -15,74 +14,135 @@ The project uses a django framework, and materializecss to help make the project
 
   - This section is used for helping people log in, log out, register or create a project.
   - This links are enabled to allow the user to navigate the pages and also to, the logo is also interactable to bring you to the home page
+  - I have also made the navbar responsive so its still able to be used on smaller devices
 
-![Nav Bar](https://github.com/lucyrush/readme-template/blob/master/media/love_running_nav.png)
+![navbar](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157708/Screenshot_43_myyufd.png)
 
+![Nav Bar](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157708/Screenshot_42_mo6rqz.png)
 
-![Landing Page](https://github.com/lucyrush/readme-template/blob/master/media/love_running_landing.png)
+![landingpage](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709158730/Screenshot_41_m1uke0.png)
 
 - Home page
 
   - The home page has three different things that will appear depending on the circumstances and status of your visit using DTL(django template language)
-  - If the user is loggin on it will reveal 
-![Club Ethos](https://github.com/lucyrush/readme-template/blob/master/media/love_running_ethos.png)
 
-- __Meetup Times section__
+  ![signed in](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157709/Screenshot_44_ejz2pg.png)
 
-  - This section will allow the user to see exactly when the meetups will happen, where they will be located and how long the run will be in kilometers. 
-  - This section will be updated as these times change to keep the user up to date. 
+  ![project list](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157709/Screenshot_45_tukj3a.png)
 
-![Meetup Times](https://github.com/lucyrush/readme-template/blob/master/media/love_running_times.png)
+
+- __Sign in Page__
+![Sign in page](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157710/Screenshot_46_odvvpm.png)
+
+  - This section will allow the user to sign in using their already created user info,  
+
+- __Sign up page__ 
+
+  - This section allows the user who is not a registered or authenticated user to sign up and use the site
+![Sign up page](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157710/Screenshot_47_hqphlw.png)
+
+- __Logout page__ 
+
+- This section allows the user to sign out and it confirms with him as part of a defensive design to make the user aware of his action and choices.
+![logout](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157710/Screenshot_48_m7vwtr.png)
 
 - __The Footer__ 
 
-  - The footer section includes links to the relevant social media sites for Love Running. The links will open to a new tab to allow easy navigation for the user. 
+
+  - The footer section includes links to the relevant social media sites for Econ Budget. The links will open to a new tab to allow easy navigation for the user. 
   - The footer is valuable to the user as it encourages them to keep connected via social media
 
-![Footer](https://github.com/lucyrush/readme-template/blob/master/media/love_running_footer.png)
+![Footer](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157710/Screenshot_49_ltqxme.png)
 
-- __Gallery__
+- __Add Project__
 
-  - The gallery will provide the user with supporting images to see what the meet ups look like. 
-  - This section is valuable to the user as they will be able to easily identify the types of events the organisation puts together. 
+- This section allows users to create a project using the input fields, for name/title, cost and to add categories to this project.
+- this section allows for the Create in the core of crud functionality by allowing the user to create a project which is then read from the database of the user and displayed on the home screen
+- as it currently stands it is possible to create project with out a category which will cause the expense modal to break down and not function
 
-![Gallery](https://github.com/lucyrush/readme-template/blob/master/media/love_running_gallery.png)
+![Add project](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157710/Screenshot_50_n47edm.png)
 
-- __The Sign Up Page__
+- __Project Detail Page__
 
-  - This page will allow the user to get signed up to Love Running to start their running journey with the community. The user will be able specify if they would like to take part in road, trail or both types of running. The user will be asked to submit their full name and email address. 
+- This section allows the user to update the expenses on each project which then modifies the cost this allows the user to Update according to crud funcitonality and makes it so the user can tell how much budget he has left
+- this section also has user centric text colour to convey whether there is money left or not
 
-![Sign Up](https://github.com/lucyrush/readme-template/blob/master/media/love_running_signup.png)
+![Project detail](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157710/Screenshot_52_gou7ik.png)
 
-For some/all of your features, you may choose to reference the specific project files that implement them.
+- __Add Expenses__
+- this section shows the popup modal which has form validation the three sections allow  the  user to select a name for the expense how much it costs and the category it is assigned to.
+- the project detail page will automatically update when an expense is either created or deleted
+- as it currently stands a category must be assigned to the expense
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
+![add expense](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157711/Screenshot_54_vkpgua.png)
+
+![expense added](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157711/Screenshot_55_a1dgr4.png)
+  - 
+
+- __Delete Project__
+- this section modal pops up and adds defensive programming to make sure the user is aware of his choices and when he clicks confirm it will remove the project from the database
+- this fulfills the Delete in CRUD functionality
+![delete project](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709159548/Screenshot_57_j17a7c.png)
 ### Features Left to Implement
 
-- Another feature idea
+- user email authentication, the ability to add categories to already created projects
 
+### User Stories 
+
+![user stories](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709161089/Screenshot_61_ya7qcu.png)
 ## Testing 
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+Through manual testing:
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+I first check to see if the django frame work was wired to the database and server correctly.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+![test1](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157707/Screenshot_23_x4llmh.png)
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+![test2](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157707/Screenshot_24_pzokgl.png)
 
+I created a simplistic view to test if the view would be shown on the server.
+
+by clicking on the sign in button you are taken to the sign in page, if while there you do not have a registered account you can click the sign up page and you will redirected to the registration/sign up page of.
+I did this through using django.allAuth
+
+if you click add project either on the center of your screen or on the nav bar you are taken to the add project screen,
+through this entire process i had Google dev tools open to check if any errors show up either on the console or problems with my code
+
+I used a base template and extended each into the three other templates i used Project_detail, Project_list and add-project
+
+
+when in the add project view you will be forced through form validation to put in a name and number, the user should be warned that it is possible to enter a negative number, this is intentional as it allows for the expenses to take it into the negative to show how much over budget they have went.
+
+It is possible to create a project without a category but this would cause a break.
+
+when adding categories you have to hit enter after everyone and then the categories are not only displayed their input values are then uploaded to the server via a many to one relationship one being the project many being the categories, when creating an expense in the project, the only categories able to be chosen are the categories assigned at project created 
+
+![expense category](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709160257/Screenshot_59_ny56wq.png)
+
+![expense category2](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709160257/Screenshot_58_nukc2l.png)
+
+
+the expense form also has validation and doesnt let the user submit an invalid form, the only error message which doesnt appear is the one under the categories for add expenses, which should see one must be selected
+
+ This project is primarily designed to be used on smaller screen sizes, with nav changing to a side nav, using materialize flex box all elements are positioned to fit on all screen sizes
+
+ ![phone view](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709160538/Screenshot_60_kjsa0g.png)
 
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)(https://res.cloudinary.com/dtajxn9oi/image/upload/v1709158173/Screenshot_51_qe9wuy.png)
+  ![wc3 validatorj](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709158173/Screenshot_51_qe9wuy.png)
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
+  - No errors were found when passing through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/)
+
+  ![css test](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709157711/Screenshot_56_edmsxx.png)
+  
 
 ### Unfixed Bugs
-
-You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
+- the ability to create a project without a category
+- The lack of form validation on the form expenses particularly the categories
 
 ## Deployment
 
@@ -98,37 +158,19 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 
 ## Credits 
 
-In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
+this is a youtube tutorial which i used and adapted to suit my needs
+[Youtube tutorial](https://www.youtube.com/watch?v=en4fg1F1gRs&list=PLbpAWbHbi5rNUuLTzreCl1g212G7qgzpR)
 
-You can break the credits section up into Content and Media, depending on what you have included in your project. 
+i also used a stack overflow page to add form validation to the form expenses [form](https://stackoverflow.com/questions/34999531/how-to-correctly-validate-a-modal-form)
+
 
 ### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- all content used in this project was taken and adapted by me
+- some of the pages came from and are inspired by the  I think therefore i blog code institute project
 
 ### Media
 
-- The photos used on the home and sign up page are from This Open Source site
-- The images used for the gallery page were taken from this other open source site
+- all images were taken and uploaded by me to cloudinary to save load time on the project
 
 
-Congratulations on completing your Readme, you have made another big stride in the direction of being a developer! 
-
-## Other General Project Advice
-
-Below you will find a couple of extra tips that may be helpful when completing your project. Remember that each of these projects will become part of your final portfolio so it’s important to allow enough time to showcase your best work! 
-
-- One of the most basic elements of keeping a healthy commit history is with the commit message. When getting started with your project, read through [this article](https://chris.beams.io/posts/git-commit/) by Chris Beams on How to Write  a Git Commit Message 
-  - Make sure to keep the messages in the imperative mood 
-
-- When naming the files in your project directory, make sure to consider meaningful naming of files, point to specific names and sections of content.
-  - For example, instead of naming an image used ‘image1.png’ consider naming it ‘landing_page_img.png’. This will ensure that there are clear file paths kept. 
-
-- Do some extra research on good and bad coding practices, there are a handful of useful articles to read, consider reviewing the following list when getting started:
-  - [Writing Your Best Code](https://learn.shayhowe.com/html-css/writing-your-best-code/)
-  - [HTML & CSS Coding Best Practices](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
-  - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html#General)
-
-Getting started with your Portfolio Projects can be daunting, planning your project can make it a lot easier to tackle, take small steps to reach the final outcome and enjoy the process! 
