@@ -10,8 +10,8 @@
   <div class="col-md-8 mt-3 offset-md-2">
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
-        <span class="card-title"><h1>{% trans "Sign Up" %}</h1></span>
-        <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+        <h1><span class="card-title">{% trans "Sign Up" %}</span></h1>
+        {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}

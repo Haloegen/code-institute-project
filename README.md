@@ -130,10 +130,9 @@ the expense form also has validation and doesnt let the user submit an invalid f
  ![phone view](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709160538/Screenshot_60_kjsa0g.png)
 
 ### Validator Testing 
-
-- HTML
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)(https://res.cloudinary.com/dtajxn9oi/image/upload/v1709158173/Screenshot_51_qe9wuy.png)
-  ![wc3 validatorj](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709158173/Screenshot_51_qe9wuy.png)
+- Html
+  - Errors were only found on the signup/register page which is due to the template of allauth.
+  - check screenshots attached
 - CSS
   - No errors were found when passing through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/)
 
