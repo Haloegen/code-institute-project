@@ -1,3 +1,5 @@
+# views.py
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import CreateView
@@ -12,16 +14,18 @@ import json
 # Create your views here.
 
 def project_list(request):
-    # Retrieves all projects from the database and renders them in the 'project-list.html' template
-    project_list = Project.objects.all()
-    return render(request, 'budget/project-list.html', {'project_list': project_list})
-
+    # Retrieves projects authored by the authenticated user
+    if request.user.is_authenticated:
+        user_projects = Project.objects.filter(author=request.user)
+    else:
+        user_projects = []
+    return render(request, 'budget/project-list.html', {'project_list': user_projects})
 
 def project_detail(request, project_slug):
     project = get_object_or_404(Project, slug=project_slug)
     if request.method == 'GET':
         category_list = Category.objects.filter(project=project)
-        return render(request, 'budget/project-detail.html', {'project': project, 'expense_list':project.expenses.all(), 'category_list': category_list})
+        return render(request, 'budget/project-detail.html', {'project': project, 'expense_list': project.expenses.all(), 'category_list': category_list})
     elif request.method == 'POST' and project.author == request.user:
         form = formExpenses(request.POST)
         if form.is_valid():
@@ -36,15 +40,12 @@ def project_detail(request, project_slug):
                 cost=cost,
                 category=category
             ).save()
-            
-        
     elif request.method == 'DELETE' and project.author == request.user:
         id = json.loads(request.body)['id']
         expense = get_object_or_404(Expense, id=id)
         expense.delete()
         return HttpResponse('')
     return HttpResponseRedirect(project_slug)
-
 
 class ProjectCreateView(CreateView):
     # Creates a new project using Django's CreateView, including handling category creation
@@ -63,14 +64,12 @@ class ProjectCreateView(CreateView):
                 project=Project.objects.get(id=self.object.id),
                 name=category,
             ).save()
-            messages.add_message(self.request, messages.SUCCESS, 'Project Created')
+        messages.add_message(self.request, messages.SUCCESS, 'Project Created')
         return HttpResponseRedirect(self.get_success_url())
     
     def get_success_url(self):
         # Returns the success URL, which is the slugified project name
         return slugify(self.request.POST['name'])
-
-
 
 @login_required
 def delete_project(request, project_slug):

@@ -91,6 +91,59 @@ The project uses a django framework, and materializecss to help make the project
 ### User Stories 
 
 ![user stories](https://res.cloudinary.com/dtajxn9oi/image/upload/v1709161089/Screenshot_61_ya7qcu.png)
+
+[_**user stories project board**_](https://github.com/users/Haloegen/projects/5)
+
+With the help of some of the tutors I have marked the user stories according to the MoSCoW method this can be seen on the kanban board for the project, with most or all core functionality falling into the must have functionality
+
+### User Story Testing
+Below will be some examples of the process I undertook to test the user stories but for more information the project board will have a complete list of the user stories undertaken in this project.
+
+USER STORY:AUTHENTICATION, as a new user I would like to be able to create an account
+Test: fill out the sign up form and then try to log in with the information you have submitted
+status: complete
+
+USER STORY: BASE TEMPLATES, as a site admin I wan there to be a base html which increaes the speed in which we can update the entire project
+Test: Modify code on the base html and see if it changes in the development server
+status: complete
+
+USER STORIES: PROJECTS, as a logged in and authenticated user, i would like the ability to delete my own projects
+Test: on the project list screen click the delete button and confirm,
+refresh page and check admin panel to see if database is deleted
+status: complete
+
+USER STORIES: EXPENSES, as a logged in user i would like to see the form to add expenses when i click the button on the projects page
+Test: click on a project and click the add expenses and see if the form renders
+status: complete
+
+USER STORIES: AUTHENTICATION, as a newly signed up user I would like to be able to log in
+Test: after you have submitted the information click the sign in page and use the same information to sign in 
+status: complete
+
+USER STORIES: SITE ADMIN, as a site admin I would like to be able to see the list of budgets displayed in the database
+Test: after creating projects check the admin panel and see if the budgets are logged into the database
+status: complete
+
+USER STORIES: NAVIGATION, as a logged in user I would like the nav bar to conditionally render out the sign in button/register buttons for the log out button
+Test: sign in and log out, check the nav bar at the top of the screen. Does it change?
+status: Complete
+
+USER STORIES: as a logged out user, I wont be able to access the create budget form from the home page
+Test: Log out and see if the add project button disappears
+status: complete
+
+USER STORIES: NAVIGATION, as a user I can click the brand name and be brought to the home screen
+Test: click the brand name from one of the other pages and see if your brought to the home screen
+status: complete
+
+
+These are examples of the processes I undertook to finalise and complete the user stories.
+
+
+### Agile methodology
+
+the agile process is described in the [_**agile.md**_](/AGILE.md)
+
 ## Testing 
 
 Through manual testing:
@@ -133,6 +186,8 @@ the expense form also has validation and doesnt let the user submit an invalid f
 - Html
   - Errors were only found on the signup/register page which is due to the template of allauth.
   - check screenshots attached
+  ![sign up html error](https://res.cloudinary.com/dtajxn9oi/image/upload/v1718112153/Screenshot_51_ywqhmw.png)
+
 - CSS
   - No errors were found when passing through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/)
 
@@ -141,6 +196,7 @@ the expense form also has validation and doesnt let the user submit an invalid f
 
 ### Unfixed Bugs
 - the ability to create a project without a category
+- html error for the sign up page
 - The lack of form validation on the form expenses particularly the categories
 
 ## Deployment
