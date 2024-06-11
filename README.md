@@ -188,6 +188,13 @@ the expense form also has validation and doesnt let the user submit an invalid f
   - check screenshots attached
   ![sign up html error](https://res.cloudinary.com/dtajxn9oi/image/upload/v1718112153/Screenshot_51_ywqhmw.png)
 
+  as you can see both elements if the picture have closing tags which make the error surprising.
+
+  ![sign up errors](https://res.cloudinary.com/dtajxn9oi/image/upload/v1718113363/Screenshot_57_stkpos.png)
+
+  the other pages showed no errors
+  ![pages](https://res.cloudinary.com/dtajxn9oi/image/upload/v1718113363/Screenshot_58_aa8gpt.png)
+
 - CSS
   - No errors were found when passing through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/)
 
