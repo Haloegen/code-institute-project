@@ -12,8 +12,7 @@ For this project, I adopted an agile approach in order to better organise the wo
    - [**Second Sprint**](#second-sprint)
    - [**Third Sprint**](#third-sprint)
    - [**Fourth Sprint**](#fourth-sprint)
-   - [**Fifth Sprint**](#fifth-sprint)
-1. [**User Story Notes**](#user-story-notes)
+
 
 ## **Sprints**
 
@@ -40,7 +39,7 @@ This sprint consisted of the user stories focusing on navigation and authenticat
 feb 13th - feb 28
 
 This sprint comprised of User stories from the Project Expenses and Catagories section. 
-With the base models and views from the previous sprints all rendering to the database created Crud functionality and form validation 
+With the base models and views from the previous sprints all rendering to the database created Crud functionality and form validation. This sprint is longer than the others due to styling and validation of information, which took far longer than I expected when undertaking this project. A good challenge.
 
 
 
